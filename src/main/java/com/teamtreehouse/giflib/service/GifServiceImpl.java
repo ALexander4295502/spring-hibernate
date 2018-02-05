@@ -20,6 +20,11 @@ public class GifServiceImpl implements GifService{
     }
 
     @Override
+    public List<Gif> search(String q) {
+        return gifDao.search(q);
+    }
+
+    @Override
     public Gif findById(Long id) {
         return gifDao.findById(id);
     }
@@ -37,5 +42,21 @@ public class GifServiceImpl implements GifService{
     @Override
     public void delete(Gif gif) {
         gifDao.delete(gif);
+    }
+
+    @Override
+    public void update(Gif gif, MultipartFile file) {
+        try {
+            gif.setBytes(file.getBytes());
+            gifDao.update(gif);
+        } catch (IOException e) {
+            System.err.println("Unable to get byte array from uploaded file.");
+        }
+    }
+
+    @Override
+    public void toggleFavorite(Gif gif) {
+        gif.setFavorite(!gif.isFavorite());
+        gifDao.update(gif);
     }
 }

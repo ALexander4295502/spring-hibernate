@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:fragment="head(page_title)" lang="en">
     <meta charset="UTF-8"/>
@@ -44,7 +44,9 @@
         <div class="col s12">
             <form th:action="@{/search}" method="get">
                 <div class="input-field">
-                    <input name="q" type="search" placeholder="Search all gifs..." required="required" autocomplete="off"/>
+                    <input name="q" type="search"
+                           placeholder="Search all test gif..."
+                           required="required" autocomplete="off"/>
                     <i class="material-icons">search</i>
                 </div>
             </form>

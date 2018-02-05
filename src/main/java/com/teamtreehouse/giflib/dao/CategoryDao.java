@@ -9,4 +9,5 @@ public interface CategoryDao {
     Category findById(Long id);
     void save(Category category);
     void delete(Category category);
+    void update(Category category);
 }

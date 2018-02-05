@@ -10,4 +10,7 @@ public interface GifService {
     Gif findById(Long id);
     void save(Gif gif, MultipartFile file);
     void delete(Gif gif);
+    void update(Gif gif, MultipartFile file);
+    void toggleFavorite(Gif gif);
+    List<Gif> search(String q);
 }

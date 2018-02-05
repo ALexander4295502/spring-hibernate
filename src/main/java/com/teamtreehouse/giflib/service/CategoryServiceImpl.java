@@ -19,7 +19,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category findById(Long id) {
-        return null;
+        return categoryDao.findById(id);
     }
 
     @Override
@@ -29,6 +29,11 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public void delete(Category category) {
+        categoryDao.delete(category);
+    }
 
+    @Override
+    public void update(Category category) {
+        categoryDao.update(category);
     }
 }
